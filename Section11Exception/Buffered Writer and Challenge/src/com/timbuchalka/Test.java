@@ -99,16 +99,17 @@ public class Test {
 //        }
 
 
-        String s = "0,YOU, ARE SITTING IN FRONT OF A COMPUTER LEARNING JAVA.";
-        Scanner scanner = new Scanner(s);
-        scanner.useDelimiter(",");
-        int loc = scanner.nextInt();
-//        scanner.skip(scanner.delimiter());
-        String abc = scanner.next();
-//        scanner.skip(scanner.delimiter());
-        String description = scanner.nextLine();
-        System.out.println(loc +   description);
-        System.out.println(abc);
+//        String s = "0,YOU, ARE SITTING IN FRONT OF A COMPUTER LEARNING JAVA.";
+//        Scanner scanner = new Scanner(s);
+//        scanner.useDelimiter(",");
+//        int loc = scanner.nextInt();
+////        scanner.skip(scanner.delimiter());
+//        String abc = scanner.next();
+////        scanner.skip(scanner.delimiter());
+//        String description = scanner.nextLine();
+//        System.out.println(loc +   description);
+//        System.out.println(abc);
+
 
 
 
