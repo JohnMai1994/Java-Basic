@@ -15,6 +15,17 @@ import java.nio.ByteBuffer;
 public class TestBuffer
 {
     @Test
+    public void Test3() {
+        // 分配直接缓冲区
+        ByteBuffer buf = ByteBuffer.allocateDirect(1024);
+//        ByteBuffer buf = ByteBuffer.allocate(1024);
+
+        System.out.println(buf.isDirect());
+
+    }
+
+
+    @Test
     public void  test2() {
         String str = "Hello World";
         ByteBuffer buf = ByteBuffer.allocate(1024);
