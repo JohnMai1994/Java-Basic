@@ -1,4 +1,7 @@
 package test.com.example.mypackage;
 
-public class ArrayList {
+public class linkedList {
+
+
+
 }
