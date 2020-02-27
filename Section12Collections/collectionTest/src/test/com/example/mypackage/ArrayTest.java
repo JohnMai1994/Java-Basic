@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
+// 这里是泛型
 public class ArrayTest {
 
 
