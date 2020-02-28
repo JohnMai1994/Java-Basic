@@ -2,12 +2,31 @@ package test.com.example.mypackage;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 // 这里是泛型
 public class ArrayTest {
+
+    @Test
+    public void test4() {
+        Queue<String > queue = new LinkedList<>();
+        Stack<String> stack = new Stack<String>();
+
+        queue.add("123");
+        queue.add("234");
+        queue.add("345");
+
+        stack.push("123");
+        stack.push("234");
+        stack.push("345");
+
+        for (String str : queue) {
+            System.out.println(str);
+        }
+
+        System.out.println(stack.pop());
+
+    }
 
 
     @Test
