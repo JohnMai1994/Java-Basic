@@ -2,25 +2,66 @@ package test.com.example.mypackage;
 
 import org.junit.Test;
 
-import java.util.Vector;
+import java.util.*;
 
 public class advanceCollection {
-    
+
+    @Test
+    public void test4() {
+        List c = new ArrayList();
+        for (int i = 0; i < 10; i++)
+            c.add(Integer.toString(i));
+
+        Iterator it = c.iterator();
+
+
+        while (it.hasNext()) {
+            String str = (String) it.next();
+            if (str.equals("3")) {
+                System.out.println("remove");
+                it.remove();
+            } else {
+                System.out.println(str);
+            }
+        }
+
+
+
+    }
 
 
 
 
 
 
+    static class Printer {
+        static void printAll(Enumeration e){
+            while (e.hasMoreElements()) {
+                System.out.println(e.nextElement().toString());
+            }
+        }
+    }
 
+    @Test
+    public void test3() {
+        class Hamster {
+            private int hamsterNumber;
 
+            Hamster(int i) {
+                hamsterNumber = i;
+            }
 
+            public String toString() {
+                return "This is Hamster #" + hamsterNumber;
+            }
+        }
 
-
-
-
-
-
+        Vector v = new Vector();
+        for (int i =0; i< 3;i++) {
+            v.addElement(new Hamster(i));
+        }
+        Printer.printAll(v.elements());
+    }
 
 
     class Cat {
