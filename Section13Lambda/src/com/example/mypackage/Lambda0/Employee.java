@@ -1,4 +1,4 @@
-package com.example.mypackage;
+package com.example.mypackage.Lambda0;
 
 public class Employee {
     private String name;
