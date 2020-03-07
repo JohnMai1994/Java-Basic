@@ -111,7 +111,7 @@ public class TestStreamAPI3 {
 
         hs.forEach(System.out::println);
 
-        
+
     }
 
 }
