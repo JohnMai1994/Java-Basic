@@ -3,6 +3,7 @@ package com.example.mypackage.Stream;
 import com.example.mypackage.Lambda0.Employee;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -79,6 +80,72 @@ public class TestStreamAPI2 {
                 .distinct()   // 如果Employee这个类中没有hashCode和equals的话，没办法去重复
                 .forEach(System.out::println);
     }
+
+    @Test
+    public void test6() {
+        List<String> list = Arrays.asList("bbb", "aaa", "cc");
+
+        list.stream()
+                .map((str) -> str.length())   // 这里用的是Function
+                .forEach(System.out::println);
+        System.out.println("-------------------------------");
+        employees.stream()
+                .map(Employee::getName)
+                .forEach(System.out::println);
+
+        System.out.println("-------------------------------");
+
+        Stream<Stream<Character>> streamStream = list.stream()
+                .map(TestStreamAPI2::filterCharacter);  // {{b,b,b}, {a,a,a}, {c,c,c}}
+
+        streamStream.forEach((sm) -> {
+            sm.forEach(System.out::println);
+        });
+
+        System.out.println("-------------------------------");
+
+        Stream<Character> characterStream = list.stream()
+                .flatMap(TestStreamAPI2::filterCharacter); // {b,b,b,a,a,a,c,c,c}
+
+        characterStream.forEach(System.out::println);
+
+
+    }
+
+    @Test
+    public void test7() {
+        List<String> list = Arrays.asList("bbb", "aaa", "cc");
+
+        list.stream()
+                .sorted()
+                .forEach(System.out::println);
+
+        System.out.println("---------------------------------");
+        list.stream()
+                .sorted((e1, e2) -> {
+                    if (e1.length() > e2.length()){
+                        return e2.compareTo(e1);
+                    } else {
+                        return e1.length() - e2.length();
+                    }
+
+                })
+                .forEach(System.out::println);
+    }
+
+
+
+
+
+    public static Stream<Character> filterCharacter(String string) {
+        List<Character> list = new ArrayList<>();
+
+        for (Character ch: string.toCharArray()) {
+            list.add(ch);
+        }
+        return list.stream();
+    }
+
 
 
 }
